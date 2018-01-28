@@ -14,6 +14,13 @@ proxies
 /*.mpr.left*
 /*.mpr.right*
 #mxgit-marker-start
+
+src/gradle_src/.gradle
+src/gradle_src/.settings
+src/gradle_src/bin
+src/gradle_src/build
+
+
 src/.svn
 src/modeler-merge-marker
 src/.mendix-cache

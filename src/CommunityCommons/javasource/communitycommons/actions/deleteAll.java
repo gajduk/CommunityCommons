@@ -9,9 +9,10 @@
 
 package communitycommons.actions;
 
+import org.community_commons.main.XPath;
+
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import communitycommons.XPath;
 
 /**
  * Removes ALL instances of a certain domain object type using batches.

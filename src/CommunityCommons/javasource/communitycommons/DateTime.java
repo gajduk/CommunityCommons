@@ -13,56 +13,27 @@ public class DateTime
 	 * Code is gebaseerd op http://stackoverflow.com/questions/1116123/how-do-i-calculate-someones-age-in-java 
 	 */
 	public static long yearsBetween(Date birthdate, Date comparedate) {
-		if (birthdate == null)
-			return -1L; 
-		
-		Calendar now = Calendar.getInstance();
-		if (comparedate != null)
-			now.setTime(comparedate);
-		Calendar dob = Calendar.getInstance();
-		dob.setTime(birthdate);
-		if (dob.after(now)) 
-			return -1L;
-		
-		int year1 = now.get(Calendar.YEAR);
-		int year2 = dob.get(Calendar.YEAR);
-		long age = year1 - year2;
-		int month1 = now.get(Calendar.MONTH);
-		int month2 = dob.get(Calendar.MONTH);
-		if (month2 > month1) {
-		  age--;
-		} else if (month1 == month2) {
-		  int day1 = now.get(Calendar.DAY_OF_MONTH);
-		  int day2 = dob.get(Calendar.DAY_OF_MONTH);
-		  if (day2 > day1) {
-		    age--;
-		  }
-		}
-		return age;		
+		return org.community_commons.main.DateTime.yearsBetween(birthdate, comparedate);	
 	}
 
 	public static long dateTimeToLong(Date date)
 	{
-		return date.getTime();
+		return org.community_commons.main.DateTime.dateTimeToLong(date);
 	}
 
 	public static Date longToDateTime(Long value)
 	{
-		return new Date(value);
+		return org.community_commons.main.DateTime.longToDateTime(value);
 	}
 	
 	public static long dateTimeToInteger(Date date, DatePartSelector selectorObj)
 	{
-		Calendar newDate = Calendar.getInstance();
-		newDate.setTime(date);
-		int value = -1;
 		switch (selectorObj) {
-			case year : value = newDate.get(Calendar.YEAR); break;
-			case month : value = newDate.get(Calendar.MONTH)+1; break; // Return starts at 0
-			case day : value = newDate.get(Calendar.DAY_OF_MONTH); break;
-			default : break;
+			case year : return org.community_commons.main.DateTime.dateTimeToInteger(date, Calendar.YEAR);
+			case month : return org.community_commons.main.DateTime.dateTimeToInteger(date, Calendar.MONTH)+1;  // Return starts at 0
+			case day : return org.community_commons.main.DateTime.dateTimeToInteger(date, Calendar.DAY_OF_MONTH);
+			default : return -1L;
 		}
-		return value;
 	}
 		
 }
