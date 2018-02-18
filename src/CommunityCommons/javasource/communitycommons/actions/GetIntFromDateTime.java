@@ -11,7 +11,7 @@ package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import communitycommons.DateTime;
+import java.util.Calendar;
 
 /**
  * Converts a datetime to an integer based on the selector used.
@@ -37,7 +37,12 @@ public class GetIntFromDateTime extends CustomJavaAction<java.lang.Long>
 	public java.lang.Long executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		return DateTime.dateTimeToInteger(dateObj, selectorObj);
+		switch (selectorObj) {
+			case year : return org.community_commons.main.DateTime.dateTimeToInteger(dateObj, Calendar.YEAR);
+			case month : return org.community_commons.main.DateTime.dateTimeToInteger(dateObj, Calendar.MONTH)+1;  // Return starts at 0
+			case day : return org.community_commons.main.DateTime.dateTimeToInteger(dateObj, Calendar.DAY_OF_MONTH);
+			default : return -1L;
+		}
 		// END USER CODE
 	}
 

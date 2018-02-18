@@ -12,7 +12,8 @@ package communitycommons.actions;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.webui.CustomJavaAction;
-import communitycommons.Misc;
+import java.util.stream.Collectors;
+import org.community_commons.main.Misc;
 
 public class MergeMultiplePdfs extends CustomJavaAction<java.lang.Boolean>
 {
@@ -39,7 +40,11 @@ public class MergeMultiplePdfs extends CustomJavaAction<java.lang.Boolean>
 		this.MergedDocument = __MergedDocument == null ? null : system.proxies.FileDocument.initialize(getContext(), __MergedDocument);
 
 		// BEGIN USER CODE
-		return Misc.mergePDF(this.getContext(), this.FilesToMerge, this.MergedDocument.getMendixObject());
+		return Misc.mergePDF(this.getContext(), 
+				this.FilesToMerge.stream().
+					map(f -> communitycommons.Misc.convertFileDocument(f))
+					.collect(Collectors.toList()), 
+				this.MergedDocument.getMendixObject());
 		// END USER CODE
 	}
 

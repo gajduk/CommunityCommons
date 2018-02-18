@@ -9,7 +9,8 @@
 
 package communitycommons.actions;
 
-import communitycommons.Logging;
+import org.community_commons.main.Logging;
+import communitycommons.Misc;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 
@@ -39,7 +40,7 @@ public class Log extends CustomJavaAction<java.lang.Boolean>
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		Logging.log(lognode, loglevel, message);
+		Logging.log(lognode, Misc.getLogLevel(loglevel), message, null);;
 		return true;
 		// END USER CODE
 	}

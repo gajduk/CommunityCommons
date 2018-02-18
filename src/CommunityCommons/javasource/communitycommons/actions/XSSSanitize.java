@@ -9,7 +9,7 @@
 
 package communitycommons.actions;
 
-import communitycommons.StringUtils;
+import org.community_commons.main.StringUtils;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 
@@ -51,7 +51,12 @@ public class XSSSanitize extends CustomJavaAction<java.lang.String>
 	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		return StringUtils.XSSSanitize(html, policy);
+		if (html == null)
+			return "";
+		// return HtmlSanitizer.sanitize(html);
+		String policyString = policy == null ? "tinymce" :
+												policy.toString().toLowerCase();
+		return StringUtils.XSSSanitize(html, policyString);
 		// END USER CODE
 	}
 

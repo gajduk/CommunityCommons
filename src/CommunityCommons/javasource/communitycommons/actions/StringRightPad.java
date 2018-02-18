@@ -40,7 +40,7 @@ public class StringRightPad extends CustomJavaAction<java.lang.String>
 	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		return communitycommons.StringUtils.rightPad(value, amount, fillCharacter);
+		return org.community_commons.main.StringUtils.rightPad(value, amount, fillCharacter);
 		// END USER CODE
 	}
 

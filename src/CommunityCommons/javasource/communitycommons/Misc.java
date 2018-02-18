@@ -13,6 +13,7 @@ import com.mendix.integration.WebserviceException;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
+import communitycommons.proxies.LogLevel;
 import system.proxies.FileDocument;
 import system.proxies.Language;
 
@@ -33,6 +34,18 @@ public class Misc
 				return fd.getHasContents();
 			}
 		};
+	}
+	
+	public static org.community_commons.main.Logging.LogLevel getLogLevel(LogLevel loglevel) {
+		switch ( loglevel ) {
+			case Critical: return org.community_commons.main.Logging.LogLevel.Critical; 
+			case Debug: return org.community_commons.main.Logging.LogLevel.Debug; 
+			case Error: return org.community_commons.main.Logging.LogLevel.Error; 
+			case Info: return org.community_commons.main.Logging.LogLevel.Info; 
+			case Trace: return org.community_commons.main.Logging.LogLevel.Trace; 
+			case Warning: return org.community_commons.main.Logging.LogLevel.Warning;
+			default: return org.community_commons.main.Logging.LogLevel.Info;
+		}
 	}
 	
 	

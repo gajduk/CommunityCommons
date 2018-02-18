@@ -10,9 +10,10 @@
 package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IMendixObject;
-import communitycommons.StringUtils;
+import org.community_commons.main.StringUtils;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
+import communitycommons.Misc;
 
 /**
  * Stores a string into the provides filedocument
@@ -38,7 +39,7 @@ public class StringToFile extends CustomJavaAction<java.lang.Boolean>
 		this.destination = __destination == null ? null : system.proxies.FileDocument.initialize(getContext(), __destination);
 
 		// BEGIN USER CODE
-		StringUtils.stringToFile(getContext(), value, destination);
+		StringUtils.stringToFile(getContext(), value, Misc.convertFileDocument(destination));
 		return true;
 		// END USER CODE
 	}

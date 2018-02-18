@@ -10,7 +10,6 @@
 package communitycommons.actions;
 
 import org.community_commons.main.XPath;
-
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 

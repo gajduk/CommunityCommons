@@ -11,7 +11,7 @@ package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import communitycommons.StringUtils;
+import org.community_commons.main.StringUtils;
 
 /**
  * Escapes a string value so that it can be used literally with Mendix build-in regex replacement functions. (Otherwise the dollar sign would be interpreted as back reference to a match for example). 

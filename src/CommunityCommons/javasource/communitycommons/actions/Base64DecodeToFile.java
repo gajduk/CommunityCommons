@@ -10,7 +10,7 @@
 package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IMendixObject;
-import communitycommons.StringUtils;
+import org.community_commons.main.StringUtils;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 
@@ -38,7 +38,7 @@ public class Base64DecodeToFile extends CustomJavaAction<java.lang.Boolean>
 		this.targetFile = __targetFile == null ? null : system.proxies.FileDocument.initialize(getContext(), __targetFile);
 
 		// BEGIN USER CODE
-		StringUtils.base64DecodeToFile(getContext(), encoded, targetFile);
+		StringUtils.base64DecodeToFile(getContext(), encoded, targetFile.getMendixObject());
 		return true;
 		// END USER CODE
 	}

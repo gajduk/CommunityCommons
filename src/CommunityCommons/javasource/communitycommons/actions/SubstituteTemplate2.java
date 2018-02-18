@@ -10,7 +10,7 @@
 package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IMendixObject;
-import communitycommons.StringUtils;
+import org.community_commons.main.StringUtils;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 

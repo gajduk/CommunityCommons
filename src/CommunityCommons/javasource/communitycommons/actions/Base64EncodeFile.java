@@ -10,9 +10,10 @@
 package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IMendixObject;
-import communitycommons.StringUtils;
+import org.community_commons.main.StringUtils;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
+import communitycommons.Misc;
 
 /**
  * Converts an unencoded file to a base 64 encoded string.
@@ -34,7 +35,7 @@ public class Base64EncodeFile extends CustomJavaAction<java.lang.String>
 		this.file = __file == null ? null : system.proxies.FileDocument.initialize(getContext(), __file);
 
 		// BEGIN USER CODE
-		return StringUtils.base64EncodeFile(getContext(), file);
+		return StringUtils.base64EncodeFile(getContext(), Misc.convertFileDocument(file));
 		// END USER CODE
 	}
 

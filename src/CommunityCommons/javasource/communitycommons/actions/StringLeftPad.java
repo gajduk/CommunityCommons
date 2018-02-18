@@ -40,7 +40,7 @@ public class StringLeftPad extends CustomJavaAction<java.lang.String>
 	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		return communitycommons.StringUtils.leftPad(value, amount, fillCharacter);
+		return org.community_commons.main.StringUtils.leftPad(value, amount, fillCharacter);
 		// END USER CODE
 	}
 

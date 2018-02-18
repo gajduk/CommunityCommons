@@ -11,7 +11,7 @@ package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import communitycommons.DateTime;
+import org.community_commons.main.DateTime;
 
 /**
  * Converts a Unix timestamp to a dateTime object

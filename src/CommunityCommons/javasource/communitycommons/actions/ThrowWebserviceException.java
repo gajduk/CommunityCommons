@@ -9,7 +9,7 @@
 
 package communitycommons.actions;
 
-import communitycommons.Misc;
+import org.community_commons.main.Misc;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 

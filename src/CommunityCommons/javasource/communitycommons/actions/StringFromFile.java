@@ -10,9 +10,10 @@
 package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IMendixObject;
-import communitycommons.StringUtils;
+import org.community_commons.main.StringUtils;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
+import communitycommons.Misc;
 
 /**
  * Reads the contents form the provided file document and return it as string
@@ -36,7 +37,7 @@ public class StringFromFile extends CustomJavaAction<java.lang.String>
 		this.source = __source == null ? null : system.proxies.FileDocument.initialize(getContext(), __source);
 
 		// BEGIN USER CODE
-		return StringUtils.stringFromFile(getContext(), source);
+		return StringUtils.stringFromFile(getContext(), Misc.convertFileDocument(source));
 		// END USER CODE
 	}
 

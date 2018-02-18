@@ -11,7 +11,7 @@ package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import communitycommons.StringUtils;
+import org.community_commons.main.StringUtils;
 
 /**
  * Gets the substring after the last occurrence of a separator.

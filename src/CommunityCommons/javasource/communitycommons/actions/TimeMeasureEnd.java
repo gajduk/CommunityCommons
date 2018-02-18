@@ -9,9 +9,10 @@
 
 package communitycommons.actions;
 
-import communitycommons.Logging;
+import org.community_commons.main.Logging;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
+import communitycommons.Misc;
 
 /**
  * End timing something, and print the result to the log. 
@@ -37,7 +38,7 @@ public class TimeMeasureEnd extends CustomJavaAction<java.lang.Long>
 	public java.lang.Long executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		return Logging.measureEnd(TimerName, Loglevel, message);
+		return Logging.measureEnd(TimerName, Misc.getLogLevel(Loglevel), message);
 		// END USER CODE
 	}
 

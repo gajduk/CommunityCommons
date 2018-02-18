@@ -11,7 +11,7 @@ package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import communitycommons.Logging;
+import org.community_commons.main.Logging;
 
 public class CreateLogNode extends CustomJavaAction<java.lang.Boolean>
 {

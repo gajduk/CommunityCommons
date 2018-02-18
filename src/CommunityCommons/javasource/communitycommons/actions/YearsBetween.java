@@ -10,7 +10,7 @@
 package communitycommons.actions;
 
 import java.util.Date;
-import communitycommons.DateTime;
+import org.community_commons.main.DateTime;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 

@@ -12,7 +12,7 @@ package communitycommons.actions;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
-import communitycommons.ORM;
+import org.community_commons.main.ORM;
 
 /**
  * Copies all common primitive attributes from source to target, which are not necessarily of the same type. This is useful to, for example, translate database object into view objects.

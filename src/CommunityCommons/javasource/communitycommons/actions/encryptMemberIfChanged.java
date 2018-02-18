@@ -13,7 +13,7 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.webui.FeedbackHelper;
-import communitycommons.ORM;
+import org.community_commons.main.ORM;
 
 /**
  * Use this function to automatically encrypt attributes of an object during (for example) before commit.
