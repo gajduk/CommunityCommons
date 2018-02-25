@@ -1,9 +1,10 @@
 package org.community_commons.main;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
 import java.security.DigestException;
@@ -256,12 +257,11 @@ public class StringUtils
 		if (policy_string == null)
 			throw new Exception("Unable to perform XSS sanitization: policyString is null");
 
-		String filename = Core.getConfiguration().getResourcesPath() + File.separator
-				+ "communitycommons" + File.separator + "antisamy"
-				+ File.separator + "antisamy-" + policy_string + "-1.4.4.xml";
-
 		AntiSamy as = new AntiSamy(); // Create AntiSamy object
-		Policy p = Policy.getInstance(filename);
+		
+		String filename = "/antisamy-"+ policy_string + "-1.4.4.xml";
+		Policy p = Policy.getInstance(StringUtils.class.getResourceAsStream(filename));
+		
 		try {
 			CleanResults cr = as.scan(html, p, AntiSamy.SAX);
 			return cr.getCleanHTML();

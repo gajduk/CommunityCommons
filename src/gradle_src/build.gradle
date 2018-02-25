@@ -82,6 +82,17 @@ dependencies {
 }
 
 shadowJar {
+
+    relocate('org.apache', 'cc_org.apache')
+    relocate('org.cyberneko', 'cc_org.cyberneko')
+    relocate('org.joda', 'cc_org.joda')
+    relocate('org.owasp', 'cc_org.owasp')
+    relocate('org.w3c', 'cc_org.w3c')
+    relocate('org.xml', 'cc_org.xml')
+    relocate('javax', 'cc_javax')
+    relocate('java_cup', 'cc_java_cup')
+    relocate('com.google', 'cc_com.google')
+    
 	dependencies {
 		exclude 'com/mendix/**'
 	}

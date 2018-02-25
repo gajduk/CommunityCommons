@@ -12,10 +12,12 @@ package communitycommons.actions;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import org.apache.commons.io.IOUtils;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
+
+import cc_org.apache.commons.io.IOUtils;
+
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 /**

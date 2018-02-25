@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.community_commons.main.IFileDocument;
 import org.community_commons.main.UserThrownException;
 
@@ -20,8 +21,8 @@ import system.proxies.Language;
 
 public class Misc
 {
-	
 	public static IFileDocument convertFileDocument(final FileDocument fd) {
+
 		return new IFileDocument() {
 			
 			@Override
